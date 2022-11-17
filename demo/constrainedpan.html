@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OpenSeadragon fitBoundsWithConstraints() Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- <script type="text/javascript" src='../../build/openseadragon/openseadragon.js'></script> -->
+    <script type="text/javascript" src="../script/openseadragon.min.js"></script>
+    <style type="text/css">
+
+      .openseadragon1 {
+          width: 800px;
+          height: 600px;
+      }
+
+      #highlights li {
+        cursor: pointer;
+      }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>Simple demo to see panning improvements using the following settings:</p>
+        <ul>
+            <li>homeFillsViewer: true</li>
+            <li>showZoomControl: false,</li>
+            <li>constrainDuringPan: true,</li>
+            <li>visibilityRatio: 1,</li>
+        </ul>
+    </div>
+
+    <div id="contentDiv" class="openseadragon1"></div>
+    <div class="row mt-5 ml-2">
+        <a class="btn btn-danger" href="../index.html" style="width: 200px;">Home</a>
+    </div>
+    <script type="text/javascript">
+
+        var _viewer;
+
+        var _viewer = OpenSeadragon({
+            element: document.getElementById("contentDiv"),
+            tileSources: "../folder/file.dzi",
+            homeFillsViewer: true,
+            showZoomControl: false,
+            constrainDuringPan: true,
+            visibilityRatio: 1,
+            prefixUrl: "../images/",
+            minZoomImageRatio: 1
+        });
+    </script>
+</body>
+</html>
